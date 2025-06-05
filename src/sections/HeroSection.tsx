@@ -128,9 +128,9 @@ const HeroSection: React.FC = () => {
             <div className="absolute inset-0 rectangle-full bg-gradient-to-r from-neon-blue to-neon-pink opacity-20 blur-2xl animate-pulse"></div>
             <div className="relative w-full h-full rectangle-full overflow-hidden  border-dark-100 shadow-xl">
               <img 
-                src="./../public/images/kundanimage.png" 
+                src="/images/kundanimage.png" 
                 alt="Kundan Kumar" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover scale-110"
               />
               
             </div>
