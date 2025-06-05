@@ -130,7 +130,7 @@ const HeroSection: React.FC = () => {
               <img 
                 src="./../public/images/kundanimage.png" 
                 alt="Kundan Kumar" 
-                className="w-full h-full object-cover scale-110"
+                className="w-full h-full object-cover"
               />
               
             </div>
