@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-300 text-gray-100 font-sans overflow-x-hidden;
+  }
+  
+  ::selection {
+    @apply bg-neon-pink/30 text-white;
+  }
+}
+
+@layer components {
+  .neon-border {
+    @apply relative border border-transparent;
+  }
+  
+  .neon-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg -z-10;
+    background: linear-gradient(90deg, #00eeff, #ff00ff, #00ff66, #bf00ff);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
+  }
+  
+  .cyberpunk-btn {
+    @apply relative overflow-hidden px-6 py-3 bg-dark-200 uppercase font-mono font-bold tracking-wider border border-primary-500 transition-all duration-300;
+  }
+  
+  .cyberpunk-btn::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 bg-gradient-to-r from-neon-blue to-neon-pink transition-opacity duration-300;
+  }
+  
+  .cyberpunk-btn:hover::before {
+    @apply opacity-20;
+  }
+  
+  .cyberpunk-btn:hover {
+    @apply border-neon-pink shadow-[0_0_10px_#ff00ff];
+    transform: translateY(-2px);
+  }
+  
+  .glitch-text {
+    @apply relative inline-block;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 255, 0.75),
+                -0.05em -0.025em 0 rgba(0, 255, 255, 0.75),
+                0.025em 0.05em 0 rgba(0, 255, 0, 0.75);
+    animation: glitch 500ms infinite;
+  }
+  
+  .title-gradient {
+    @apply font-bold;
+    background: linear-gradient(90deg, #00eeff, #ff00ff);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 3s linear infinite;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
